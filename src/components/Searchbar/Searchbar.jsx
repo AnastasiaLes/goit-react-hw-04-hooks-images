@@ -11,9 +11,7 @@ import { ImSearch } from 'react-icons/im';
 import 'react-toastify/dist/ReactToastify.css';
 
 export function Searchbar({ onSubmit }) {
-  // const [imageList, setImageList] = useState([]);
   const [searchImageTitle, setSearchImageTitle] = useState('');
-  // const [page, setPage] = useState(1);
 
   const handleSearchbarChange = event => {
     setSearchImageTitle(event.currentTarget.value.toLowerCase());

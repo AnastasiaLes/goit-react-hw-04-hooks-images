@@ -39,6 +39,16 @@ export function App() {
     }
   }, [imageName, page]);
 
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+  }, [visible]);
+
+  const handleKeyDown = event => {
+    if (event.code === 'Escape') {
+      setVisible(false);
+    }
+  };
+
   const handleFormSubmit = imageName => {
     setImageName(imageName);
     setImageList([]);
@@ -57,7 +67,6 @@ export function App() {
   };
 
   const onModalClose = event => {
-    console.log(event.code);
     event.preventDefault();
     if (event.target === event.currentTarget) {
       setVisible(false);

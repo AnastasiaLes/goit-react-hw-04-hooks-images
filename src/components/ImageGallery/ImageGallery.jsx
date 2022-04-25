@@ -3,13 +3,7 @@ import { Spiner } from 'components/Loader/Loader';
 import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
 import { ImageGalleryStyles } from 'components/ImageGalleryItem/ImageGalleryItem.styled';
 
-export function ImageGallery({
-  imageName,
-  status,
-  imageList,
-  onImageClick,
-  // error,
-}) {
+export function ImageGallery({ imageName, status, imageList, onImageClick }) {
   if (status === 'idle') {
     return <h2>Please, enter what you are looking for...</h2>;
   }
