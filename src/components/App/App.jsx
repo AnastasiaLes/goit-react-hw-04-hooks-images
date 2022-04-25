@@ -37,7 +37,7 @@ export function App() {
           setError(error);
         });
     }
-  }, [imageName, page]);
+  }, [imageName, page, error]);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -81,7 +81,7 @@ export function App() {
         status={status}
         imageList={imageList}
         onImageClick={handleImageClick}
-        error={error}
+        // error={error}
       />
 
       {visible && (

@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Spiner } from 'components/Loader/Loader';
 import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
 import { ImageGalleryStyles } from 'components/ImageGalleryItem/ImageGalleryItem.styled';
@@ -29,3 +29,10 @@ export function ImageGallery({ imageName, status, imageList, onImageClick }) {
     );
   }
 }
+
+ImageGallery.propTypes = {
+  imageName: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  imageList: PropTypes.array.isRequired,
+  onImageClick: PropTypes.func.isRequired,
+};

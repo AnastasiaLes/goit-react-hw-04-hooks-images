@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Overlay, ModalContainer } from './Modal.styled';
 
 export function Modal({ onClose, LargeImage, tag }) {
@@ -9,3 +10,9 @@ export function Modal({ onClose, LargeImage, tag }) {
     </Overlay>
   );
 }
+
+Modal.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  LargeImage: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+};
