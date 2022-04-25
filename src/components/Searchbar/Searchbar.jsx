@@ -1,43 +1,46 @@
-import React from 'react';
-import {SearchbarStyles, SearchForm, SearchFormButton, SearchFormButtonLabel, SearchFormInput } from './Searchbar.styled';
+import React, { useState } from 'react';
+import {
+  SearchbarStyles,
+  SearchForm,
+  SearchFormButton,
+  SearchFormButtonLabel,
+  SearchFormInput,
+} from './Searchbar.styled';
 import { toast } from 'react-toastify';
-import { ImSearch } from "react-icons/im";
+import { ImSearch } from 'react-icons/im';
 import 'react-toastify/dist/ReactToastify.css';
 
-export class Searchbar extends React.Component {
-  state = {
-    imageList: [],
-    searchImageTitle: '',
-    page: 1
+export function Searchbar({ onSubmit }) {
+  // const [imageList, setImageList] = useState([]);
+  const [searchImageTitle, setSearchImageTitle] = useState('');
+  // const [page, setPage] = useState(1);
+
+  const handleSearchbarChange = event => {
+    setSearchImageTitle(event.currentTarget.value.toLowerCase());
   };
 
-  handleSearchbarChange = (event) => {
-    this.setState({
-      searchImageTitle: event.currentTarget.value.toLowerCase()
-    });
-  }
-
-  handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
 
-    if (this.state.searchImageTitle.trim() === '') {
-      return toast("Enter what you are looking for");
+    if (searchImageTitle.trim() === '') {
+      return toast('Enter what you are looking for');
     }
-    this.props.onSubmit(this.state.searchImageTitle );
-    this.setState({searchImageTitle: ''})
-  }
+    onSubmit(searchImageTitle);
+    setSearchImageTitle('');
+  };
 
-  render() {
-    return (
+  return (
     <SearchbarStyles>
-      <SearchForm onSubmit={this.handleSubmit}>
-        <SearchFormButton type="submit"> <ImSearch />    
-        <SearchFormButtonLabel>  Search</SearchFormButtonLabel>
+      <SearchForm onSubmit={handleSubmit}>
+        <SearchFormButton type="submit">
+          {' '}
+          <ImSearch />
+          <SearchFormButtonLabel> Search</SearchFormButtonLabel>
         </SearchFormButton>
 
         <SearchFormInput
-          value={this.state.searchImageTitle}
-          onChange={this.handleSearchbarChange}
+          value={searchImageTitle}
+          onChange={handleSearchbarChange}
           type="text"
           autoComplete="off"
           autoFocus
@@ -45,6 +48,5 @@ export class Searchbar extends React.Component {
         />
       </SearchForm>
     </SearchbarStyles>
-    );
-  }
+  );
 }
