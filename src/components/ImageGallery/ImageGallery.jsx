@@ -8,7 +8,7 @@ export function ImageGallery({
   status,
   imageList,
   onImageClick,
-  error,
+  // error,
 }) {
   if (status === 'idle') {
     return <h2>Please, enter what you are looking for...</h2>;

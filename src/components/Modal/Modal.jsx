@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Overlay, ModalContainer } from './Modal.styled';
 
 export function Modal({ onClose, LargeImage, tag }) {

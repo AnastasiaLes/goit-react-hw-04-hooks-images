@@ -1,14 +1,10 @@
-import React from 'react';
+// import React from 'react';
 import { GalleryItem, GalleryImage } from '../ImageGallery/ImageGallery.styled';
 
-export const ImageGalleryItem = ({webformatURL, onClick, tag }) => {
+export const ImageGalleryItem = ({ webformatURL, onClick, tag }) => {
   return (
-   <GalleryItem>
-      <GalleryImage
-        src={webformatURL}
-        alt={tag}
-        onClick={onClick}
-      />
+    <GalleryItem>
+      <GalleryImage src={webformatURL} alt={tag} onClick={onClick} />
     </GalleryItem>
   );
 };

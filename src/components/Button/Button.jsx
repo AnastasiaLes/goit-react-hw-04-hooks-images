@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { LoadMoreBtn } from './Button.styled';
 
 export function LoadMoreButton({ onClick }) {
