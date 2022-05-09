@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-04-hooks-images",
+  "name": "goit-react-hw-05-movies",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AnastasiaLes.github.io/goit-react-hw-04-hooks-images/",
+  "homepage": "https://AnastasiaLes.github.io/goit-react-hw-05-movies/",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
